@@ -1,0 +1,5 @@
+Hello! To keep the pixels, resolution, and consistent, here are some of the things I used:
+
+Pixels Per Inch for 32x32 sprites: 16
+Camera Size: 6
+
