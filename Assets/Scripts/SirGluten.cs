@@ -31,8 +31,16 @@ public class Bread : MonoBehaviour
         } else {
             body.linearVelocity = new Vector2(horizontalInput * 10, body.linearVelocity.y);
         }
-        spriteRenderer.flipX = body.linearVelocity.x < 0f;        
+        if (horizontalInput < 0) {
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+        } else if (horizontalInput > 0) {
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+        }
     }
+
+  
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
