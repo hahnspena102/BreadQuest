@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: 25f3a5c8adb1b4866a90329732187b2c
+guid: d65068ce73e784239b0f311a20490357
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3958161622895194127
-    second: SGCrouch_0
+      213: -4283513990457667651
+    second: SGCrouchWalk_0
   - first:
-      213: 3089806113636582147
-    second: SGCrouch_1
+      213: 8461866497452615840
+    second: SGCrouchWalk_1
   - first:
-      213: 1143588784538032318
-    second: SGCrouch_2
+      213: 3996439132886390077
+    second: SGCrouchWalk_2
   - first:
-      213: -6412088423672602587
-    second: SGCrouch_3
-  - first:
-      213: -1891018333527175678
-    second: SGCrouch_4
-  - first:
-      213: -3616792618980680609
-    second: SGCrouch_5
-  - first:
-      213: 3450610504721765008
-    second: SGCrouch_6
-  - first:
-      213: -2166045429681109043
-    second: SGCrouch_7
-  - first:
-      213: -8375818569162865741
-    second: SGCrouch_8
+      213: 5005731365176004944
+    second: SGCrouchWalk_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -137,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SGCrouch_0
+      name: SGCrouchWalk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -152,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f00704856073ee630800000000000000
-      internalID: 3958161622895194127
+      spriteID: dbfca5088b6ed84c0800000000000000
+      internalID: -4283513990457667651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SGCrouch_1
+      name: SGCrouchWalk_1
       rect:
         serializedVersion: 2
         x: 32
@@ -174,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30383243a4231ea20800000000000000
-      internalID: 3089806113636582147
+      spriteID: 0a8217d1fb69e6570800000000000000
+      internalID: 8461866497452615840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SGCrouch_2
+      name: SGCrouchWalk_2
       rect:
         serializedVersion: 2
         x: 64
@@ -196,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb89287c0f7dedf00800000000000000
-      internalID: 1143588784538032318
+      spriteID: d35d922a734367730800000000000000
+      internalID: 3996439132886390077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SGCrouch_3
+      name: SGCrouchWalk_3
       rect:
         serializedVersion: 2
         x: 96
@@ -218,118 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 520a9962d8fa307a0800000000000000
-      internalID: -6412088423672602587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SGCrouch_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20e8c5e38d0c1c5e0800000000000000
-      internalID: -1891018333527175678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SGCrouch_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5cd66f86429ecdc0800000000000000
-      internalID: -3616792618980680609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SGCrouch_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0921c20d8f703ef20800000000000000
-      internalID: 3450610504721765008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SGCrouch_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc7cf7c6829a0f1e0800000000000000
-      internalID: -2166045429681109043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SGCrouch_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b34de9636d13cb80800000000000000
-      internalID: -8375818569162865741
+      spriteID: 051d856b72ee77540800000000000000
+      internalID: 5005731365176004944
       vertices: []
       indices: 
       edges: []
@@ -338,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d15f3c76fd0a246f8a78e7e3a6cd6ec5
+    spriteID: ac6f1c91ae4484b3b8387e046d4928fb
     internalID: 0
     vertices: []
     indices: 
@@ -348,15 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SGCrouch_0: 3958161622895194127
-      SGCrouch_1: 3089806113636582147
-      SGCrouch_2: 1143588784538032318
-      SGCrouch_3: -6412088423672602587
-      SGCrouch_4: -1891018333527175678
-      SGCrouch_5: -3616792618980680609
-      SGCrouch_6: 3450610504721765008
-      SGCrouch_7: -2166045429681109043
-      SGCrouch_8: -8375818569162865741
+      SGCrouchWalk_0: -4283513990457667651
+      SGCrouchWalk_1: 8461866497452615840
+      SGCrouchWalk_2: 3996439132886390077
+      SGCrouchWalk_3: 5005731365176004944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
