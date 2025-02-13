@@ -5,12 +5,14 @@ public class Bread : MonoBehaviour
 {
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D collider;
     private int jumpCount;
-    private bool isCrouching;
-    private float horizontalInput;
-    private float verticalInput;
+    private bool isCrouching, isAttacking;
+    private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
+    [SerializeField]private AudioSource jumpSFX;
+    [SerializeField]private AudioSource attackSFX;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,6 +21,7 @@ public class Bread : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        collider = GetComponent<BoxCollider2D>();
         jumpCount = 0;
     }
     void Update() {
@@ -31,6 +34,7 @@ public class Bread : MonoBehaviour
             animator.SetBool("crouch",false);
             body.linearVelocity = new Vector2(body.linearVelocity.x, 8);
             jumpCount += 1;
+            jumpSFX.Play(0);
 
         }
 
@@ -39,13 +43,19 @@ public class Bread : MonoBehaviour
             animator.SetBool("crouch",true);
             isCrouching = true;
         } 
-        if (verticalInput > 0 && isCrouching) {
-            StartCoroutine(Uncrouch());
-            
+        if (isCrouching) {
+            collider.size = new Vector2(1.13f,0.8f);
+            collider.offset = new Vector2(0.065f,-0.48f);
+            if (verticalInput > 0) {
+                 StartCoroutine(Uncrouch());
+            }
+        } else {
+            collider.size = new Vector2(1.13f,1.6f);
+            collider.offset = new Vector2(0.065f,-0.02f);
         }
         // Sword
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            Debug.Log("*sword swing*");
+        if (Input.GetKeyDown(KeyCode.Return) && !isAttacking && !isCrouching) {
+            StartCoroutine(Attack());
         }
         
         animator.SetFloat("horizontal",Mathf.Abs(body.linearVelocity.x));
@@ -78,9 +88,19 @@ public class Bread : MonoBehaviour
         isCrouching = false;
     }
 
+    IEnumerator Attack() {
+        isAttacking = true;
+        attackSFX.Play(0);
+        animator.SetTrigger("attack");
+        yield return new WaitForSeconds(0.6f);
+        isAttacking = false;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
             jumpCount = 0;
+        } else if (collision.gameObject.tag == "Lava") {
+            body.position = new Vector2(1f,-1f);
         }
     }
 }
