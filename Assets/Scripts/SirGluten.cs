@@ -35,7 +35,7 @@ public class Bread : MonoBehaviour
         }
 
         // Crouch
-        if (verticalInput < 0 && !isCrouching) {
+        if (verticalInput < 0 && !isCrouching && body.linearVelocity.y == 0) {
             animator.SetBool("crouch",true);
             isCrouching = true;
         } 
@@ -44,7 +44,7 @@ public class Bread : MonoBehaviour
             
         }
         // Sword
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.Return)) {
             Debug.Log("*sword swing*");
         }
         
