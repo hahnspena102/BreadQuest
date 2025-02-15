@@ -25,7 +25,7 @@ public class Bread : MonoBehaviour
         jumpCount = 0;
     }
     void Update() {
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 
         // Jump
@@ -39,16 +39,17 @@ public class Bread : MonoBehaviour
         }
 
         // Crouch
-        if (verticalInput < 0 && !isCrouching && body.linearVelocity.y == 0) {
+        if (verticalInput < -0.1 && body.linearVelocity.y == 0) {
             animator.SetBool("crouch",true);
             isCrouching = true;
+        } else {
+            animator.SetBool("crouch",false);
+            StartCoroutine(Uncrouch());
         } 
+
         if (isCrouching) {
             collider.size = new Vector2(1.13f,0.8f);
             collider.offset = new Vector2(0.065f,-0.48f);
-            if (verticalInput > 0) {
-                 StartCoroutine(Uncrouch());
-            }
         } else {
             collider.size = new Vector2(1.13f,1.6f);
             collider.offset = new Vector2(0.065f,-0.02f);
@@ -65,7 +66,7 @@ public class Bread : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isCrouching) {
+        if (verticalInput >= 0) {
             movementSpeed = 8;
         } else {
             movementSpeed = 4;
@@ -84,6 +85,9 @@ public class Bread : MonoBehaviour
 
     IEnumerator Uncrouch() {
         animator.SetBool("crouch",false);
+        if (verticalInput < 0) {
+            yield return new WaitForSeconds(0f);
+        }
         yield return new WaitForSeconds(.4f);
         isCrouching = false;
     }
