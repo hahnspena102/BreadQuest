@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: f9aee6eab40fb46259d3035aea9e220c
+guid: d3d121a0a3a863243b9ddc7dada2675e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8694325765454532765
-    second: C44DB1A0-1293-4C41-BCE1-98D865AF3F24_1_105_c_0
+      213: 1802537128826739424
+    second: MarshIdle_0
+  - first:
+      213: 3669036561921522243
+    second: MarshIdle_1
+  - first:
+      213: -8277057905795402951
+    second: MarshIdle_2
+  - first:
+      213: -7294171102038660996
+    second: MarshIdle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -74,7 +83,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: C44DB1A0-1293-4C41-BCE1-98D865AF3F24_1_105_c_0
+      name: MarshIdle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1254
-        height: 627
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36f6e84e7cc875780800000000000000
-      internalID: -8694325765454532765
+      spriteID: 0ea9b2ae7f5e30910800000000000000
+      internalID: 1802537128826739424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarshIdle_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ab04d40590be230800000000000000
+      internalID: 3669036561921522243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarshIdle_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933f9bb30bbf12d80800000000000000
+      internalID: -8277057905795402951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarshIdle_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c78e0146706e5ca90800000000000000
+      internalID: -7294171102038660996
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bc77162dca22a7c44b2ecdf061a5d755
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MarshIdle_0: 1802537128826739424
+      MarshIdle_1: 3669036561921522243
+      MarshIdle_2: -8277057905795402951
+      MarshIdle_3: -7294171102038660996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

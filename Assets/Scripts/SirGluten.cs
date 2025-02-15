@@ -5,7 +5,7 @@ public class Bread : MonoBehaviour
 {
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D collider;
+    private BoxCollider2D sgCollider;
     private int jumpCount;
     private bool isCrouching, isAttacking;
     private float horizontalInput, verticalInput;
@@ -14,14 +14,16 @@ public class Bread : MonoBehaviour
     [SerializeField]private AudioSource jumpSFX;
     [SerializeField]private AudioSource attackSFX;
 
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Sword Things
+    [SerializeField]private GameObject sword;
+
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        collider = GetComponent<BoxCollider2D>();
+        sgCollider = GetComponent<BoxCollider2D>();
         jumpCount = 0;
     }
     void Update() {
@@ -48,11 +50,11 @@ public class Bread : MonoBehaviour
         } 
 
         if (isCrouching) {
-            collider.size = new Vector2(1.13f,0.8f);
-            collider.offset = new Vector2(0.065f,-0.48f);
+            sgCollider.size = new Vector2(1.13f,0.8f);
+            sgCollider.offset = new Vector2(0.065f,-0.48f);
         } else {
-            collider.size = new Vector2(1.13f,1.6f);
-            collider.offset = new Vector2(0.065f,-0.02f);
+            sgCollider.size = new Vector2(1.13f,1.6f);
+            sgCollider.offset = new Vector2(0.065f,-0.02f);
         }
         // Sword
         if (Input.GetKeyDown(KeyCode.Return) && !isAttacking && !isCrouching) {
@@ -96,8 +98,13 @@ public class Bread : MonoBehaviour
         isAttacking = true;
         attackSFX.Play(0);
         animator.SetTrigger("attack");
+        yield return new WaitForSeconds(0.1f);
+        sword.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        sword.SetActive(false);
         yield return new WaitForSeconds(0.6f);
         isAttacking = false;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
