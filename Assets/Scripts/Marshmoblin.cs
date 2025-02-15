@@ -7,6 +7,7 @@ public class Marshmoblin : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D body;
     [SerializeField] GameObject spear;
+    [SerializeField] Rigidbody2D player;
     
     void Start()
     {
@@ -19,19 +20,30 @@ public class Marshmoblin : MonoBehaviour
     }
 
     void Update(){
+        if (player.position.x - body.position.x > 0) {
+            Vector3 rotator = new Vector2(transform.rotation.x, 180f);
+            transform.rotation = Quaternion.Euler(rotator);
+        } else {
+            Vector2 rotator = new Vector2(transform.rotation.x, 0f);
+            transform.rotation = Quaternion.Euler(rotator);
+        }
         if (health == 0) {
             Destroy(gameObject);
         }
     }
 
     IEnumerator Attack(){
+        float upwardOffset = 0.2f;
         Vector2 spawnPosition = new Vector2(body.position.x, body.position.y + 1f);
-        Quaternion rotation = Quaternion.Euler(0, 0, Random.Range(65,90));
+        Vector2 directionToPlayer = (new Vector2(player.position.x, player.position.y) - (Vector2)transform.position).normalized;
+        Vector2 adjustedDirection = new Vector2(directionToPlayer.x, directionToPlayer.y + upwardOffset).normalized;
+
+        Quaternion rotation = Quaternion.FromToRotation(Vector2.up, adjustedDirection);
         GameObject newSpear = Instantiate(spear, spawnPosition, rotation);
         newSpear.transform.parent = transform;
         Rigidbody2D spearBody= newSpear.GetComponent<Rigidbody2D>();
         if (spearBody != null) {
-            spearBody.linearVelocity = newSpear.transform.up * 20f; 
+            spearBody.linearVelocity = newSpear.transform.up * 14f; 
         }
         yield return new WaitForSeconds(5f);
         StartCoroutine(Attack());

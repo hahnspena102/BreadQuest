@@ -8,7 +8,9 @@ public class MarshSpear : MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
-        Destroy(gameObject);
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag != "Goblin") {
+            Destroy(gameObject,0.05f);
+        }
     }
 }
