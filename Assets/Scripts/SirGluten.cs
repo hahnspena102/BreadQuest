@@ -1,5 +1,8 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SirGluten : MonoBehaviour
 {
@@ -7,15 +10,26 @@ public class SirGluten : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D sgCollider;
     private int jumpCount;
-    private bool isCrouching, isAttacking, isHurting;
+    private bool isCrouching, isAttacking, isHurting, isSprinting;
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
     [SerializeField]private AudioSource jumpSFX;
     [SerializeField]private AudioSource attackSFX;
 
+    // Stats
+    [SerializeField]private int maxHealth = 100, health; 
+    [SerializeField]private float maxYeast = 5, yeast;
+
     // Sword Things
     [SerializeField]private GameObject sword;
+    // UI
+    [SerializeField] private GameObject healthMeter; 
+    [SerializeField] private Slider yeastMeter;
+
+    private List<GameObject> hearts = new List<GameObject>();
+
+
 
 
     void Start()
@@ -25,14 +39,52 @@ public class SirGluten : MonoBehaviour
         animator = GetComponent<Animator>();
         sgCollider = GetComponent<BoxCollider2D>();
         jumpCount = 0;
+
+        yeast = maxYeast;
+        health = maxHealth;
+        yeastMeter.maxValue = yeast;
+        yeastMeter.value = yeast;
+
+        foreach (Transform child in healthMeter.transform)hearts.Add(child.gameObject);
     }
+
     void Update() {
+        // Stats
+        foreach (Transform child in healthMeter.transform) child.gameObject.SetActive(false);
+
+        for (int i = 0; i<health;i++) {
+            healthMeter.transform.GetChild(i).gameObject.SetActive(true);
+        }
+
+        if (jumpCount <= 1) {
+            yeast += 20f * Time.deltaTime;
+        } else {
+            yeast += 5f * Time.deltaTime;
+        }
+        
+        yeast = Mathf.Clamp(yeast, 0, 100);
+        yeastMeter.value = yeast;
+
+        if (health == 0) {
+            SceneManager.LoadScene(0);
+        }
+
+        // Movement
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
+        
 
         if (!isHurting) {
             // Jump
-            if (Input.GetKeyDown(KeyCode.Space) && jumpCount <= 1) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+
+                if (jumpCount >= 1) {
+                    if (yeast <= 40) {
+                        return;
+                    }
+                    yeast -= 40;
+                }
+                
                 isCrouching = false;
                 animator.SetBool("crouch",false);
                 body.linearVelocity = new Vector2(body.linearVelocity.x, 8);
@@ -64,17 +116,28 @@ public class SirGluten : MonoBehaviour
         }
         animator.SetFloat("horizontal",Mathf.Abs(body.linearVelocity.x));
         animator.SetFloat("vertical",body.linearVelocity.y);
-            
+
+        isSprinting = Input.GetKey(KeyCode.LeftShift);
+        Debug.Log(isSprinting);
+
+        // Movement
+        if (verticalInput >= 0 && isSprinting) {
+            movementSpeed = 12f;
+            yeast -= 40f * Time.deltaTime;
+        } else if (verticalInput >= 0) {
+            movementSpeed = 6f;
+        } else {
+            movementSpeed = 3f;
+        }
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (verticalInput >= 0) {
-            movementSpeed = 8;
-        } else {
-            movementSpeed = 4;
-        }
+
+        
+
         if (!isHurting) {
             body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
 
@@ -114,7 +177,7 @@ public class SirGluten : MonoBehaviour
     }
 
     IEnumerator Hurt() {
-        Debug.Log("OUCH");
+        health--;
         animator.SetTrigger("hurt");
         isHurting = true;
 

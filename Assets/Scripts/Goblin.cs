@@ -32,9 +32,7 @@ public class Goblin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag == "Sword") {
-            Debug.Log("hit!");
-            StartCoroutine(Hurt());
-
+            StartCoroutine(Hurt()); 
         }
     }
 

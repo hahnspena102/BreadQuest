@@ -1,34 +1,31 @@
 using UnityEngine;
+using System.Collections;
 
 public class ParticleHandler : MonoBehaviour
 {
-    public void PlayParticle(float x, float y) {
-        if (transform.childCount > 0)
-        {
-            Transform firstChild = transform.GetChild(0);
-            if (firstChild.childCount > 0)
-            {
-                Transform selectedChild = firstChild.GetChild(0);
-                ParticleSystem particle = selectedChild.GetComponent<ParticleSystem>();
+    [SerializeField] GameObject available;
+    [SerializeField] GameObject unavailable;
 
-                if (particle != null)
-                {
-                    particle.transform.position = new Vector2(x, y);
-                    particle.Play();
-                }
-                else
-                {
-                    Debug.LogWarning("No ParticleSystem found on selected child.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("First child has no children.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No children found under this object.");
-        }
+    public void PlayParticle(float x, float y) {
+        Transform selectedParticle = available.gameObject.transform.GetChild(0);
+        ParticleSystem particle = selectedParticle.GetComponent<ParticleSystem>();
+                
+        particle.transform.position = new Vector2(x, y);
+        particle.Play();
+        StartCoroutine(ToggleParticle(selectedParticle));
+        
+         
+             
+      
+    }
+
+    private IEnumerator ToggleParticle(Transform child)
+    {
+        Transform originalParent = child.parent; 
+
+        child.SetParent(unavailable.transform); 
+        yield return new WaitForSeconds(2f); 
+
+        child.SetParent(originalParent);
     }
 }

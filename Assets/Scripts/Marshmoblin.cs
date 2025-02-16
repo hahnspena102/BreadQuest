@@ -27,6 +27,10 @@ public class Marshmoblin : MonoBehaviour
     }
 
     IEnumerator Attack(){
+        while (Vector2.Distance(body.position, player.position) > 16f) {
+            yield return null;
+        } 
+        
         animator.SetTrigger("attack");
         yield return new WaitForSeconds(0.6f);
         float upwardOffset = 0.2f;
