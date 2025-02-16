@@ -7,13 +7,11 @@ public class Goblin : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D body;
     [SerializeField] Rigidbody2D player;
-    //private ParticleSystem particleSystem;
-    
+    [SerializeField] ParticleHandler particleHandler;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();      
-        //particleSystem = GetComponent<ParticleSystem>(); 
     }
 
     void Update(){
@@ -25,8 +23,8 @@ public class Goblin : MonoBehaviour
             transform.rotation = Quaternion.Euler(rotator);
         }
         if (health == 0) {
-            //particleSystem.Play();
-            Destroy(gameObject,0.3f);
+            particleHandler.PlayParticle(body.position.x, body.position.y-0.5f);
+            Destroy(gameObject);
         }
     }
 
