@@ -26,6 +26,10 @@ public class Chocoblin : MonoBehaviour
     }
 
     IEnumerator Attack(){
+        while (Vector2.Distance(body.position, player.position) > 30f) {
+            yield return null;
+        } 
+
         animator.SetTrigger("attack");
         //animator.SetBool("onGround", false);
         body.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
