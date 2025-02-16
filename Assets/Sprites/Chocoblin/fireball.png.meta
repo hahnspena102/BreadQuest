@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: d3d121a0a3a863243b9ddc7dada2675e
+guid: bc3090b471dec83409aa8f50018c64c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1802537128826739424
-    second: MarshIdle_0
-  - first:
-      213: 3669036561921522243
-    second: MarshIdle_1
-  - first:
-      213: -8277057905795402951
-    second: MarshIdle_2
-  - first:
-      213: -7294171102038660996
-    second: MarshIdle_3
+      213: 5353841184698615464
+    second: fireball_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MarshIdle_0
+      name: fireball_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ea9b2ae7f5e30910800000000000000
-      internalID: 1802537128826739424
+      spriteID: 8a641dd013aac4a40800000000000000
+      internalID: 5353841184698615464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_1
+      name: fireball_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 34ab04d40590be230800000000000000
-      internalID: 3669036561921522243
+      spriteID: b4bb409a57b493a4f936a73c64adde90
+      internalID: -1131280049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_2
+      name: fireball_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 933f9bb30bbf12d80800000000000000
-      internalID: -8277057905795402951
+      spriteID: 1af15f35558fa2d4aad685f38e26c29a
+      internalID: 1476370530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_3
+      name: fireball_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 48
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c78e0146706e5ca90800000000000000
-      internalID: -7294171102038660996
+      spriteID: 74f1eb629d3eff746b133065f663ae9a
+      internalID: 1527211027
       vertices: []
       indices: 
       edges: []
@@ -213,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc77162dca22a7c44b2ecdf061a5d755
+    spriteID: 043d170f27abe064f893314c7959e8dc
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +214,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MarshIdle_0: 1802537128826739424
-      MarshIdle_1: 3669036561921522243
-      MarshIdle_2: -8277057905795402951
-      MarshIdle_3: -7294171102038660996
+      fireball_0: 5353841184698615464
+      fireball_1: -1131280049
+      fireball_2: 1476370530
+      fireball_3: 1527211027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

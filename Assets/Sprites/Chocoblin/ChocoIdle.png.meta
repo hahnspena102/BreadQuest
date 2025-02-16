@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: d3d121a0a3a863243b9ddc7dada2675e
+guid: d0cac330407ea1a4884ac2d925eb7b1f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1802537128826739424
-    second: MarshIdle_0
+      213: -4955149429689215964
+    second: ChocoIdle_0
   - first:
-      213: 3669036561921522243
-    second: MarshIdle_1
+      213: 2195810188235480684
+    second: ChocoIdle_1
   - first:
-      213: -8277057905795402951
-    second: MarshIdle_2
+      213: 6258600522672537404
+    second: ChocoIdle_2
   - first:
-      213: -7294171102038660996
-    second: MarshIdle_3
+      213: 3348131299259470565
+    second: ChocoIdle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MarshIdle_0
+      name: ChocoIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ea9b2ae7f5e30910800000000000000
-      internalID: 1802537128826739424
+      spriteID: 4241562e8d5cb3bb0800000000000000
+      internalID: -4955149429689215964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_1
+      name: ChocoIdle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34ab04d40590be230800000000000000
-      internalID: 3669036561921522243
+      spriteID: c6e95f77bb5197e10800000000000000
+      internalID: 2195810188235480684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_2
+      name: ChocoIdle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 933f9bb30bbf12d80800000000000000
-      internalID: -8277057905795402951
+      spriteID: c3f78f014040bd650800000000000000
+      internalID: 6258600522672537404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_3
+      name: ChocoIdle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c78e0146706e5ca90800000000000000
-      internalID: -7294171102038660996
+      spriteID: 5e25ab17da3f67e20800000000000000
+      internalID: 3348131299259470565
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc77162dca22a7c44b2ecdf061a5d755
+    spriteID: 5d7513c7a84e0114b8f77e0eba690217
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MarshIdle_0: 1802537128826739424
-      MarshIdle_1: 3669036561921522243
-      MarshIdle_2: -8277057905795402951
-      MarshIdle_3: -7294171102038660996
+      ChocoIdle_0: -4955149429689215964
+      ChocoIdle_1: 2195810188235480684
+      ChocoIdle_2: 6258600522672537404
+      ChocoIdle_3: 3348131299259470565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

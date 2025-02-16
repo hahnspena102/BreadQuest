@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Bread : MonoBehaviour
+public class SirGluten : MonoBehaviour
 {
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
@@ -78,13 +78,15 @@ public class Bread : MonoBehaviour
         if (!isHurting) {
             body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
 
-            // Turn
-            if (horizontalInput < 0) {
-                Vector2 rotator = new Vector3(transform.rotation.x, 180f);
-                transform.rotation = Quaternion.Euler(rotator);
-            } else if (horizontalInput > 0) {
-                Vector2 rotator = new Vector3(transform.rotation.x, 0f);
-                transform.rotation = Quaternion.Euler(rotator);
+            if (!isAttacking) {
+                // Turn
+                if (horizontalInput < 0) {
+                    Vector2 rotator = new Vector3(transform.rotation.x, 180f);
+                    transform.rotation = Quaternion.Euler(rotator);
+                } else if (horizontalInput > 0) {
+                    Vector2 rotator = new Vector3(transform.rotation.x, 0f);
+                    transform.rotation = Quaternion.Euler(rotator);
+                }
             }
         }
     }
