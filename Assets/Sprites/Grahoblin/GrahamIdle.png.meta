@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: d3d121a0a3a863243b9ddc7dada2675e
+guid: 55cc5c77cb2a47445924756a0b40d455
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1802537128826739424
-    second: MarshIdle_0
+      213: 2820248408748333917
+    second: GrahamIdle_0
   - first:
-      213: 3669036561921522243
-    second: MarshIdle_1
+      213: 782682585229762763
+    second: GrahamIdle_1
   - first:
-      213: -8277057905795402951
-    second: MarshIdle_2
+      213: 6298747735597133198
+    second: GrahamIdle_2
   - first:
-      213: -7294171102038660996
-    second: MarshIdle_3
+      213: -474595389407376880
+    second: GrahamIdle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MarshIdle_0
+      name: GrahamIdle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ea9b2ae7f5e30910800000000000000
-      internalID: 1802537128826739424
+      spriteID: d5b1ec54cf8832720800000000000000
+      internalID: 2820248408748333917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_1
+      name: GrahamIdle_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 112
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34ab04d40590be230800000000000000
-      internalID: 3669036561921522243
+      spriteID: bc021881aa5acda00800000000000000
+      internalID: 782682585229762763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_2
+      name: GrahamIdle_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 933f9bb30bbf12d80800000000000000
-      internalID: -8277057905795402951
+      spriteID: e8d201e71b5a96750800000000000000
+      internalID: 6298747735597133198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_3
+      name: GrahamIdle_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 336
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c78e0146706e5ca90800000000000000
-      internalID: -7294171102038660996
+      spriteID: 01ac5520206e969f0800000000000000
+      internalID: -474595389407376880
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc77162dca22a7c44b2ecdf061a5d755
+    spriteID: 64e79ad3e393f854da1a1bac551e1231
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MarshIdle_0: 1802537128826739424
-      MarshIdle_1: 3669036561921522243
-      MarshIdle_2: -8277057905795402951
-      MarshIdle_3: -7294171102038660996
+      GrahamIdle_0: 2820248408748333917
+      GrahamIdle_1: 782682585229762763
+      GrahamIdle_2: 6298747735597133198
+      GrahamIdle_3: -474595389407376880
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

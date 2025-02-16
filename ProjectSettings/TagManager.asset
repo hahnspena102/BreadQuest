@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ground
+  - Goblin
+  - Sword
+  - Lava
+  - EnemyProj
   layers:
   - Default
   - TransparentFX
@@ -13,10 +18,10 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - Projectile
-  - 
-  - 
-  - 
+  - Spear
+  - Sword
+  - Tiles
+  - Fireball
   - 
   - 
   - 

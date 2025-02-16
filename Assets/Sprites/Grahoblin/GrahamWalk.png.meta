@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: d3d121a0a3a863243b9ddc7dada2675e
+guid: a4bdc547f7b8c2343b5dc2e5649d7f74
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1802537128826739424
-    second: MarshIdle_0
+      213: 1429576535965095045
+    second: GrahamWalk_0
   - first:
-      213: 3669036561921522243
-    second: MarshIdle_1
+      213: -9152133144643414029
+    second: GrahamWalk_1
   - first:
-      213: -8277057905795402951
-    second: MarshIdle_2
+      213: 4896826333379123471
+    second: GrahamWalk_2
   - first:
-      213: -7294171102038660996
-    second: MarshIdle_3
+      213: 3227566964961446403
+    second: GrahamWalk_3
+  - first:
+      213: 3505577952208363481
+    second: GrahamWalk_4
+  - first:
+      213: 2872144894622009629
+    second: GrahamWalk_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MarshIdle_0
+      name: GrahamWalk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ea9b2ae7f5e30910800000000000000
-      internalID: 1802537128826739424
+      spriteID: 584de650940e6d310800000000000000
+      internalID: 1429576535965095045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_1
+      name: GrahamWalk_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 112
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34ab04d40590be230800000000000000
-      internalID: 3669036561921522243
+      spriteID: 3f7537025671df080800000000000000
+      internalID: -9152133144643414029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_2
+      name: GrahamWalk_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 933f9bb30bbf12d80800000000000000
-      internalID: -8277057905795402951
+      spriteID: f0957df0b9505f340800000000000000
+      internalID: 4896826333379123471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarshIdle_3
+      name: GrahamWalk_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 336
         y: 0
-        width: 64
-        height: 64
+        width: 112
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +209,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c78e0146706e5ca90800000000000000
-      internalID: -7294171102038660996
+      spriteID: 30a0053ed0f9acc20800000000000000
+      internalID: 3227566964961446403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamWalk_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df12ddf29056a030800000000000000
+      internalID: 3505577952208363481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamWalk_5
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19856b7098ebd720800000000000000
+      internalID: 2872144894622009629
       vertices: []
       indices: 
       edges: []
@@ -213,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc77162dca22a7c44b2ecdf061a5d755
+    spriteID: 81f2d90bcbcf5084dbf0be6b20785ebd
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MarshIdle_0: 1802537128826739424
-      MarshIdle_1: 3669036561921522243
-      MarshIdle_2: -8277057905795402951
-      MarshIdle_3: -7294171102038660996
+      GrahamWalk_0: 1429576535965095045
+      GrahamWalk_1: -9152133144643414029
+      GrahamWalk_2: 4896826333379123471
+      GrahamWalk_3: 3227566964961446403
+      GrahamWalk_4: 3505577952208363481
+      GrahamWalk_5: 2872144894622009629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
