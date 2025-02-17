@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: b8857cdcef2af4e0eab3b8ed438d5307
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7641614569238685743
+    second: SGAttack_0
+  - first:
+      213: 7145762610206103387
+    second: SGAttack_1
+  - first:
+      213: 8292706326471317609
+    second: SGAttack_2
+  - first:
+      213: -9195955764804432962
+    second: SGAttack_3
+  - first:
+      213: -439719516853627421
+    second: SGAttack_4
+  - first:
+      213: 1285675149479166844
+    second: SGAttack_5
+  - first:
+      213: 8520597937491664017
+    second: SGAttack_6
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SGAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 3, y: -14}
+        - {x: 8, y: -16}
+        - {x: 12, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 11}
+        - {x: -7, y: 11}
+        - {x: -13, y: -1}
+        - {x: -13, y: -9}
+        - {x: -6, y: -14}
+        - {x: -3, y: -16}
+        - {x: 1, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7141a490883f590800000000000000
+      internalID: -7641614569238685743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SGAttack_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 13, y: 10}
+        - {x: -8, y: 10}
+        - {x: -14, y: -2}
+        - {x: -14, y: -11}
+        - {x: -9, y: -16}
+        - {x: 13, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b575a9eeb39da2360800000000000000
+      internalID: 7145762610206103387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SGAttack_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 39, y: -11}
+        - {x: 44, y: 0}
+        - {x: 44, y: 5}
+        - {x: 42, y: 6}
+        - {x: 38, y: 6}
+        - {x: 32, y: 4}
+        - {x: 25, y: 5}
+        - {x: 23, y: 5}
+        - {x: 22, y: 12}
+        - {x: 18, y: 14}
+        - {x: -9, y: 14}
+        - {x: -11, y: 12}
+        - {x: -11, y: -7}
+        - {x: -8, y: -16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96815ff977c951370800000000000000
+      internalID: 8292706326471317609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SGAttack_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 30, y: -8}
+        - {x: 43, y: 5}
+        - {x: 43, y: 15}
+        - {x: -5, y: 15}
+        - {x: -11, y: 12}
+        - {x: -11, y: -14}
+        - {x: -10, y: -16}
+        - {x: 19, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb40a444f6616080800000000000000
+      internalID: -9195955764804432962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SGAttack_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 44, y: 2}
+        - {x: 44, y: 4}
+        - {x: 43, y: 6}
+        - {x: 38, y: 6}
+        - {x: 32, y: 4}
+        - {x: 25, y: 5}
+        - {x: 23, y: 5}
+        - {x: 23, y: 12}
+        - {x: 18, y: 14}
+        - {x: -8, y: 14}
+        - {x: -11, y: 12}
+        - {x: -11, y: -9}
+        - {x: -6, y: -16}
+        - {x: 24, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5122ddd6dc5e9f0800000000000000
+      internalID: -439719516853627421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SGAttack_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 39, y: -3}
+        - {x: 44, y: 2}
+        - {x: 44, y: 4}
+        - {x: 43, y: 6}
+        - {x: 38, y: 6}
+        - {x: 32, y: 4}
+        - {x: 25, y: 5}
+        - {x: 23, y: 5}
+        - {x: 21, y: 3}
+        - {x: 19, y: 10}
+        - {x: 16, y: 14}
+        - {x: -1, y: 14}
+        - {x: -11, y: 8}
+        - {x: -11, y: -5}
+        - {x: -10, y: -9}
+        - {x: -5, y: -16}
+        - {x: 21, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73c0459cb2a7d110800000000000000
+      internalID: 1285675149479166844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SGAttack_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 44, y: 2}
+        - {x: 44, y: 4}
+        - {x: 43, y: 6}
+        - {x: 38, y: 6}
+        - {x: 32, y: 4}
+        - {x: 25, y: 5}
+        - {x: 23, y: 5}
+        - {x: 21, y: 3}
+        - {x: 20, y: 14}
+        - {x: -11, y: 14}
+        - {x: -11, y: -6}
+        - {x: -7, y: -16}
+        - {x: 24, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241d2954b9deb48cfa8159ab250d8f87
+      internalID: 8520597937491664017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e7cf0e4225e0c4bd98e89aed464a5567
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SGAttack_0: -7641614569238685743
+      SGAttack_1: 7145762610206103387
+      SGAttack_2: 8292706326471317609
+      SGAttack_3: -9195955764804432962
+      SGAttack_4: -439719516853627421
+      SGAttack_5: 1285675149479166844
+      SGAttack_6: 8520597937491664017
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
