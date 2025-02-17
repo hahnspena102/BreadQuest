@@ -14,8 +14,8 @@ public class SirGluten : MonoBehaviour
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
-    [SerializeField]private AudioSource jumpSFX;
-    [SerializeField]private AudioSource attackSFX;
+    [SerializeField]private List<AudioSource> soundEffects = new List<AudioSource>();
+    //[SerializeField]private List<ParticleSystem> particles = new List<ParticleSystem>();
 
     // Stats
     [SerializeField]private int maxHealth = 100, health; 
@@ -89,7 +89,7 @@ public class SirGluten : MonoBehaviour
                 animator.SetBool("crouch",false);
                 body.linearVelocity = new Vector2(body.linearVelocity.x, 8);
                 jumpCount += 1;
-                jumpSFX.Play(0);
+                soundEffects[0].Play(0);
 
             }
 
@@ -118,7 +118,6 @@ public class SirGluten : MonoBehaviour
         animator.SetFloat("vertical",body.linearVelocity.y);
 
         isSprinting = Input.GetKey(KeyCode.LeftShift);
-        Debug.Log(isSprinting);
 
         // Movement
         if (verticalInput >= 0 && isSprinting) {
@@ -129,7 +128,14 @@ public class SirGluten : MonoBehaviour
         } else {
             movementSpeed = 3f;
         }
-        
+
+        /*
+        if (body.linearVelocity.x > 6f && jumpCount == 0) {
+            particles[0].Play();
+        } else {
+            particles[0].Stop();
+        }
+        */
     }
 
     // Update is called once per frame
@@ -165,7 +171,7 @@ public class SirGluten : MonoBehaviour
 
     IEnumerator Attack() {
         isAttacking = true;
-        attackSFX.Play(0);
+        soundEffects[1].Play(0);
         animator.SetTrigger("attack");
         yield return new WaitForSeconds(0.1f);
         sword.SetActive(true);
@@ -178,6 +184,7 @@ public class SirGluten : MonoBehaviour
 
     IEnumerator Hurt() {
         health--;
+        StopAllAudio();
         animator.SetTrigger("hurt");
         isHurting = true;
 
@@ -197,6 +204,10 @@ public class SirGluten : MonoBehaviour
 
         isHurting = false;
 
+    }
+
+    private void StopAllAudio() {   
+        foreach (AudioSource audio in soundEffects) audio.Stop();;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
