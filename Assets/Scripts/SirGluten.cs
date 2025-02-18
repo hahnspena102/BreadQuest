@@ -15,6 +15,7 @@ public class SirGluten : MonoBehaviour
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
+    [SerializeField] float jumpHeight;
 
     [SerializeField]private List<AudioSource> soundEffects = new List<AudioSource>();
     //[SerializeField]private List<ParticleSystem> particles = new List<ParticleSystem>();
@@ -106,7 +107,9 @@ public class SirGluten : MonoBehaviour
                 
                 isCrouching = false;
                 animator.SetBool("crouch",false);
-                body.linearVelocity = new Vector2(body.linearVelocity.x, 8);
+                body.linearVelocity = new Vector2(body.linearVelocity.x, jumpHeight);
+                
+                
                 jumpCount += 1;
                 soundEffects[0].Play(0);
 
@@ -143,7 +146,7 @@ public class SirGluten : MonoBehaviour
             movementSpeed = 12f;
             yeast -= 40f * Time.deltaTime;
         } else if (!isCrouching) {
-            movementSpeed = 6f;
+            movementSpeed = 8f;
         } else {
             movementSpeed = 3f;
         }
@@ -155,13 +158,14 @@ public class SirGluten : MonoBehaviour
             particles[0].Stop();
         }
         */
-        Vector2 frontRayOrigin = (Vector2)transform.position + (Vector2.right * transform.localScale.x * 0.5f);
-        Vector2 backRayOrigin = (Vector2)transform.position - (Vector2.right * transform.localScale.x * 0.5f);
+        Vector2 frontRayOrigin = (Vector2)transform.position + (Vector2.up * 0.01f) + (Vector2.right * transform.localScale.x * 0.5f);
+        Vector2 backRayOrigin = (Vector2)transform.position + (Vector2.up * 0.01f) - (Vector2.right * transform.localScale.x * 0.5f);
 
         RaycastHit2D frontHit = Physics2D.Raycast(frontRayOrigin, Vector2.up, 1f);
         RaycastHit2D backHit = Physics2D.Raycast(backRayOrigin, Vector2.up, 1f);
 
         isUnder = (frontHit.collider != null && !frontHit.collider.CompareTag("Player")) || (backHit.collider != null && !backHit.collider.CompareTag("Player"));
+       Debug.Log(isUnder);
     }
 
     // Update is called once per frame

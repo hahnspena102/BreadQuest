@@ -12,10 +12,9 @@ public class DialogueManager : MonoBehaviour
     void Start(){
         canvasGroup = GetComponent<CanvasGroup>();
     }
-    private List<(int, string)> dialogue = new List<(int, string)>
+    private List<List<(int, string)>> dialogue = new List<List<(int, string)>>
     {
-        (0, "ooh, a gummy heart! It restores 1 HP!"),
-        (1, "Huh?")
+        new List<(int, string)>{(1, "Watch out! There's a "),(0, "ooh, a gummy heart! It restores 1 HP!")}
     };
 
     public IEnumerator DisplayDialogue(int index) {
@@ -23,23 +22,27 @@ public class DialogueManager : MonoBehaviour
 
         canvasGroup.alpha = 1f;
 
-        textBox.text = "";
-        string fullText = dialogue[index].Item2;
+        for (int i = 0; i < dialogue[index].Count; i++){
+            textBox.text = "";
+            string fullText = dialogue[index][i].Item2;
 
-        for (int i = 0; i < icons.Count; i++)
-        {
-            icons[i].gameObject.SetActive(i == dialogue[index].Item1);
+            for (int j = 0; j < icons.Count; j++)
+            {
+                icons[j].gameObject.SetActive(j == dialogue[index][i].Item1);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+
+            foreach (char letter in fullText)
+            {
+                textBox.text += letter;
+                yield return new WaitForSeconds(0.05f);
+            }
+
+            yield return new WaitForSeconds(3f);
         }
 
-        yield return new WaitForSeconds(0.5f);
-
-        foreach (char letter in fullText)
-        {
-            textBox.text += letter;
-            yield return new WaitForSeconds(0.05f);
-        }
-
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         float fadeDuration = 1f;
         float startTime = Time.time;
