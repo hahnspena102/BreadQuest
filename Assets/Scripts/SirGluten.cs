@@ -10,10 +10,11 @@ public class SirGluten : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D sgCollider;
     private int jumpCount;
-    private bool isCrouching, isAttacking, isHurting, isSprinting;
+    private bool isCrouching, isAttacking, isHurting, isSprinting, isUnder;
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
+
     [SerializeField]private List<AudioSource> soundEffects = new List<AudioSource>();
     //[SerializeField]private List<ParticleSystem> particles = new List<ParticleSystem>();
 
@@ -97,7 +98,7 @@ public class SirGluten : MonoBehaviour
             if (verticalInput < -0.1 && body.linearVelocity.y == 0) {
                 animator.SetBool("crouch",true);
                 isCrouching = true;
-            } else {
+            } else if (!isUnder) {
                 animator.SetBool("crouch",false);
                 StartCoroutine(Uncrouch());
             } 
@@ -120,10 +121,10 @@ public class SirGluten : MonoBehaviour
         isSprinting = Input.GetKey(KeyCode.LeftShift);
 
         // Movement
-        if (verticalInput >= 0 && isSprinting) {
+        if (!isCrouching && isSprinting) {
             movementSpeed = 12f;
             yeast -= 40f * Time.deltaTime;
-        } else if (verticalInput >= 0) {
+        } else if (!isCrouching) {
             movementSpeed = 6f;
         } else {
             movementSpeed = 3f;
@@ -136,6 +137,17 @@ public class SirGluten : MonoBehaviour
             particles[0].Stop();
         }
         */
+        Vector2 frontRayOrigin = (Vector2)transform.position + (Vector2.right * transform.localScale.x * 0.5f);
+        Vector2 backRayOrigin = (Vector2)transform.position - (Vector2.right * transform.localScale.x * 0.5f);
+
+        RaycastHit2D frontHit = Physics2D.Raycast(frontRayOrigin, Vector2.up, 1f);
+        RaycastHit2D backHit = Physics2D.Raycast(backRayOrigin, Vector2.up, 1f);
+
+        isUnder = (frontHit.collider != null && !frontHit.collider.CompareTag("Player")) || (backHit.collider != null && !backHit.collider.CompareTag("Player"));
+    
+        Debug.DrawRay(frontRayOrigin, Vector2.up * 1f, Color.red); 
+        Debug.DrawRay(backRayOrigin, Vector2.up * 1f, Color.blue); 
+
     }
 
     // Update is called once per frame
@@ -162,11 +174,12 @@ public class SirGluten : MonoBehaviour
 
     IEnumerator Uncrouch() {
         animator.SetBool("crouch",false);
+        isCrouching = false;
         if (verticalInput < 0) {
             yield return new WaitForSeconds(0f);
         }
         yield return new WaitForSeconds(.4f);
-        isCrouching = false;
+        
     }
 
     IEnumerator Attack() {
@@ -206,6 +219,24 @@ public class SirGluten : MonoBehaviour
 
     }
 
+    public IEnumerator Heal() {
+        health++;
+
+        spriteRenderer.color = Color.blue;
+
+        float duration = 0.6f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(Color.blue, Color.white, elapsedTime / duration);
+            yield return null;
+        }
+
+        spriteRenderer.color = Color.white;
+    }
+
     private void StopAllAudio() {   
         foreach (AudioSource audio in soundEffects) audio.Stop();;
     }
@@ -235,4 +266,5 @@ public class SirGluten : MonoBehaviour
         }
 
     }
+    
 }
