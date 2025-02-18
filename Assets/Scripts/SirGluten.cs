@@ -119,10 +119,6 @@ public class SirGluten : MonoBehaviour
         animator.SetFloat("vertical",body.linearVelocity.y);
 
         isSprinting = Input.GetKey(KeyCode.LeftShift);
-<<<<<<< HEAD
-=======
-        
->>>>>>> main
 
         // Movement
         if (!isCrouching && isSprinting) {
@@ -224,21 +220,39 @@ public class SirGluten : MonoBehaviour
     }
 
     public IEnumerator Heal() {
-        health++;
+        if (health <= 4) {
+            health++;
+        } else {
+            yield break;
+        }
 
-        spriteRenderer.color = Color.blue;
+        Image heart = healthMeter.transform.GetChild(health - 1).GetComponent<Image>();
+
+        // Correct color definition (ensuring full alpha)
+        Color cyan = new Color(148f / 255f, 243f / 255f, 255f / 255f, 1f);
+        Color white = new Color(1f, 1f, 1f, 1f);
 
         float duration = 0.6f;
         float elapsedTime = 0f;
 
-        while (elapsedTime < duration)
-        {
+        // Set color before lerping
+        spriteRenderer.color = cyan;
+        heart.color = cyan;
+
+        while (elapsedTime < duration) {
             elapsedTime += Time.deltaTime;
-            spriteRenderer.color = Color.Lerp(Color.blue, Color.white, elapsedTime / duration);
+            float t = elapsedTime / duration;
+
+            // Ensure smooth interpolation
+            spriteRenderer.color = Color.Lerp(cyan, white, t);
+            heart.color = Color.Lerp(cyan, white, t);
+
             yield return null;
         }
 
-        spriteRenderer.color = Color.white;
+        // Ensure final color is set to white
+        spriteRenderer.color = white;
+        heart.color = white;
     }
 
     private void StopAllAudio() {   

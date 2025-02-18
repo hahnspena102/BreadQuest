@@ -17,7 +17,9 @@ public class GummyPlant : MonoBehaviour
     void Update(){
         if (health == 0) {
             particleHandler.PlayParticle(body.position.x, body.position.y-0.5f);
-            Destroy(gameObject);
+            body.position = new Vector2(-10f, -10f);
+            Destroy(gameObject,10f);
+            health--;
         }
     }
 
@@ -30,8 +32,9 @@ public class GummyPlant : MonoBehaviour
     }
 
     IEnumerator Burst() {
-        StartCoroutine(player.Heal());
         health--;
+
+        StartCoroutine(player.Heal());
         yield return null;
     }
 }

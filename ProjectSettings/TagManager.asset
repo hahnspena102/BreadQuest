@@ -20,11 +20,11 @@ TagManager:
   - Player
   - Enemy
   - Spear
-  - Sword
+  - GrahamSword
   - Tiles
   - Fireball
   - Scenery
-  - 
+  - PlayerSword
   - 
   - 
   - 
