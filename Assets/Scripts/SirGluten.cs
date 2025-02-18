@@ -137,7 +137,6 @@ public class SirGluten : MonoBehaviour
         animator.SetFloat("vertical",body.linearVelocity.y);
 
         isSprinting = Input.GetKey(KeyCode.LeftShift) && yeast > 0 && sprintToggled;
-        Debug.Log(isSprinting);
 
         // Movement
         if (!isCrouching && isSprinting) {
