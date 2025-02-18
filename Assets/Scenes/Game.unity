@@ -603,7 +603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.999939, y: 0}
+  m_AnchoredPosition: {x: 33.2, y: -73.5}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &268950924
@@ -817,6 +817,8 @@ MonoBehaviour:
   sword: {fileID: 1764099659}
   healthMeter: {fileID: 81885757}
   yeastMeter: {fileID: 1545962093}
+  yeastFill: {fileID: 639777699}
+  yeastBG: {fileID: 1080125387}
 --- !u!95 &274984972
 Animator:
   serializedVersion: 7
@@ -2006,7 +2008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 192.99, y: 20.208}
+  m_AnchoredPosition: {x: 165.08, y: 20.208}
   m_SizeDelta: {x: 339.0612, y: 40.41565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &639777699
@@ -2698,8 +2700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -12.6, y: 0}
-  m_SizeDelta: {x: -15.201, y: -0.0001}
+  m_AnchoredPosition: {x: -33.879166, y: 73.5}
+  m_SizeDelta: {x: -47.5593, y: -0.0001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034027907
 MonoBehaviour:
@@ -2764,7 +2766,7 @@ GameObject:
   - component: {fileID: 1080125388}
   - component: {fileID: 1080125387}
   m_Layer: 7
-  m_Name: Fill (1)
+  m_Name: FillBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2786,7 +2788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 176.25961, y: 20.207825}
+  m_AnchoredPosition: {x: 138.8, y: 93.708}
   m_SizeDelta: {x: 362.5193, y: 40.4156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080125387
@@ -3396,7 +3398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.4, y: -0.0000030994}
+  m_AnchoredPosition: {x: -68.1, y: -0.0000030994}
   m_SizeDelta: {x: 42.7187, y: 58.3888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419761266
@@ -3770,7 +3772,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

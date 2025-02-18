@@ -11,6 +11,7 @@ public class SirGluten : MonoBehaviour
     private BoxCollider2D sgCollider;
     private int jumpCount;
     private bool isCrouching, isAttacking, isHurting, isSprinting, isUnder;
+    private bool sprintToggled = true;
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
@@ -27,6 +28,7 @@ public class SirGluten : MonoBehaviour
     // UI
     [SerializeField] private GameObject healthMeter; 
     [SerializeField] private Slider yeastMeter;
+    [SerializeField] private Image yeastFill,yeastBG;
 
     private List<GameObject> hearts = new List<GameObject>();
 
@@ -57,14 +59,26 @@ public class SirGluten : MonoBehaviour
             healthMeter.transform.GetChild(i).gameObject.SetActive(true);
         }
 
-        if (jumpCount <= 1) {
+        if (jumpCount <= 1 && !Input.GetKey(KeyCode.LeftShift) && sprintToggled) {
             yeast += 20f * Time.deltaTime;
-        } else {
+        } else if (!Input.GetKey(KeyCode.LeftShift) || !sprintToggled) {
             yeast += 5f * Time.deltaTime;
         }
         
-        yeast = Mathf.Clamp(yeast, 0, 100);
+        yeast = Mathf.Clamp(yeast, -5f, 100);
         yeastMeter.value = yeast;
+
+        if (yeast < 0) {
+            sprintToggled = false;
+            yeastFill.color = new Color(0.7615039f,0f,1f);
+            yeastBG.color = new Color(0.470689f,0.04227482f,0.47f);
+            yeast = 0;
+        }
+        if (yeast > 40) {
+            yeastFill.color = Color.white;
+            yeastBG.color = new Color(0.2568085f, 0.2576115f,0.2568085f);
+            sprintToggled = true;
+        }
 
         if (health == 0) {
             SceneManager.LoadScene(0);
@@ -79,12 +93,16 @@ public class SirGluten : MonoBehaviour
             // Jump
             if (Input.GetKeyDown(KeyCode.Space)) {
 
+                if (isUnder) return;
+                
                 if (jumpCount >= 1) {
                     if (yeast <= 40) {
                         return;
                     }
                     yeast -= 40;
+                    yeast = Mathf.Clamp(yeast, 0f, 100);
                 }
+                
                 
                 isCrouching = false;
                 animator.SetBool("crouch",false);
@@ -118,7 +136,8 @@ public class SirGluten : MonoBehaviour
         animator.SetFloat("horizontal",Mathf.Abs(body.linearVelocity.x));
         animator.SetFloat("vertical",body.linearVelocity.y);
 
-        isSprinting = Input.GetKey(KeyCode.LeftShift);
+        isSprinting = Input.GetKey(KeyCode.LeftShift) && yeast > 0 && sprintToggled;
+        Debug.Log(isSprinting);
 
         // Movement
         if (!isCrouching && isSprinting) {
@@ -144,10 +163,6 @@ public class SirGluten : MonoBehaviour
         RaycastHit2D backHit = Physics2D.Raycast(backRayOrigin, Vector2.up, 1f);
 
         isUnder = (frontHit.collider != null && !frontHit.collider.CompareTag("Player")) || (backHit.collider != null && !backHit.collider.CompareTag("Player"));
-    
-        Debug.DrawRay(frontRayOrigin, Vector2.up * 1f, Color.red); 
-        Debug.DrawRay(backRayOrigin, Vector2.up * 1f, Color.blue); 
-
     }
 
     // Update is called once per frame
