@@ -9,6 +9,7 @@ TagManager:
   - Sword
   - Lava
   - EnemyProj
+  - GummyPlant
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Sword
   - Tiles
   - Fireball
-  - 
+  - Scenery
   - 
   - 
   - 
