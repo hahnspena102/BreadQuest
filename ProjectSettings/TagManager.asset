@@ -9,6 +9,7 @@ TagManager:
   - Sword
   - Lava
   - EnemyProj
+  - Wall
   layers:
   - Default
   - TransparentFX
