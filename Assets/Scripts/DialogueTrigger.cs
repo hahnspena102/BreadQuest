@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField]private DialogueManager dialogueManager;
+    private DialogueManager dialogueManager;
     [SerializeField]private int dialogueIndex;
     [SerializeField]private bool triggered = false;
     

@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     }
     private List<List<(int, string)>> dialogue = new List<List<(int, string)>>
     {
-        new List<(int, string)>{(1, "Watch out! There's a "),(0, "ooh, a gummy heart! It restores 1 HP!")}
+        new List<(int, string)>{(1, "Watch out! That's a Marshmoblin! They'll throw spears with marshmallows on them. Stay vigilant.")}
     };
 
     public IEnumerator DisplayDialogue(int index) {
