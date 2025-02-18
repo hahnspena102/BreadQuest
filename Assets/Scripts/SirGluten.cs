@@ -118,7 +118,7 @@ public class SirGluten : MonoBehaviour
         animator.SetFloat("vertical",body.linearVelocity.y);
 
         isSprinting = Input.GetKey(KeyCode.LeftShift);
-        Debug.Log(isSprinting);
+        
 
         // Movement
         if (verticalInput >= 0 && isSprinting) {
