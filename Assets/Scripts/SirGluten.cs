@@ -11,7 +11,7 @@ public class SirGluten : MonoBehaviour
     private BoxCollider2D sgCollider;
     private int jumpCount;
     private bool isCrouching, isAttacking, isHurting, isSprinting, isUnder;
-    private bool sprintToggled = true;
+    private bool sprintToggled = true, startSeq;
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
@@ -50,6 +50,18 @@ public class SirGluten : MonoBehaviour
         yeastMeter.value = yeast;
 
         foreach (Transform child in healthMeter.transform)hearts.Add(child.gameObject);
+
+
+        
+        StartCoroutine(StartSequence());
+
+    }
+
+    IEnumerator StartSequence() {
+        startSeq = true;
+        body.linearVelocity = new Vector2(5f,0f);
+        yield return new WaitForSeconds(2f);
+        startSeq = false;
     }
 
     void Update() {
@@ -82,7 +94,7 @@ public class SirGluten : MonoBehaviour
         }
 
         if (health == 0) {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
 
         // Movement
@@ -170,10 +182,7 @@ public class SirGluten : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        
-
-        if (!isHurting) {
+        if (!isHurting && !startSeq) {
             body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
 
             if (!isAttacking) {

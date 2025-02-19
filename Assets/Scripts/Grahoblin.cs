@@ -18,6 +18,9 @@ public class Grahoblin : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+        
         StartCoroutine(Attack());      
     }
 

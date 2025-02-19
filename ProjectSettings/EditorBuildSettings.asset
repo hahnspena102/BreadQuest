@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 0117323840ab04d228ff66b7ad3a7db2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: a3ad77db221c64e84a3852ee727f8879
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: f9c1b68af42eeb049ba12a38c0ae3265
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -12,6 +12,11 @@ public class Goblin : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();      
+
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+
+        particleHandler = FindFirstObjectByType<ParticleHandler>(); 
     }
 
     void Update(){

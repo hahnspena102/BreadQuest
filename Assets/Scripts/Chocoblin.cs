@@ -18,10 +18,13 @@ public class Chocoblin : MonoBehaviour
         animator = GetComponent<Animator>();
         StartCoroutine(StartAttack());
 
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+
     }
 
     IEnumerator StartAttack(){
-        yield return new WaitForSeconds(attackOffset);
+        yield return new WaitForSeconds(attackOffset + 0.5f);
         StartCoroutine(Attack());
     }
 

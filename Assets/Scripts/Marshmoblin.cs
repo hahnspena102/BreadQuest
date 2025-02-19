@@ -17,12 +17,15 @@ public class Marshmoblin : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+
         StartCoroutine(StartAttack());
 
     }
 
     IEnumerator StartAttack(){
-        yield return new WaitForSeconds(attackOffset);
+        yield return new WaitForSeconds(attackOffset + 0.5f);
         StartCoroutine(Attack());
     }
 
