@@ -44,7 +44,7 @@ public class End : MonoBehaviour
            foreach (char letter in fullText)
             {
                 textBox.text += letter;
-                yield return new WaitForSeconds(0.30f);
+                yield return new WaitForSeconds(0.1f);
             }
 
         yield return new WaitForSeconds(1f);
