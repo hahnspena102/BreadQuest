@@ -178,6 +178,11 @@ public class SirGluten : MonoBehaviour
         RaycastHit2D backHit = Physics2D.Raycast(backRayOrigin, Vector2.up, 1f);
 
         isUnder = (frontHit.collider != null && !frontHit.collider.CompareTag("Player")) || (backHit.collider != null && !backHit.collider.CompareTag("Player"));
+
+        if (body.position.x >= 575)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
     // Update is called once per frame
