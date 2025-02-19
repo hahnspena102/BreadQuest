@@ -10,6 +10,7 @@ public class Chocoblin : MonoBehaviour
     [SerializeField] Rigidbody2D player;
     [SerializeField] private float attackOffset = 0f;
     [SerializeField] private float cooldown = 5f;
+    private SoundHandler soundHandler;
     
     void Start()
     {
@@ -20,6 +21,8 @@ public class Chocoblin : MonoBehaviour
 
         GameObject sirGluten = GameObject.Find("SirGluten");
         player = sirGluten.GetComponent<Rigidbody2D>();
+
+          soundHandler = FindFirstObjectByType<SoundHandler>(); 
 
     }
 
@@ -35,7 +38,7 @@ public class Chocoblin : MonoBehaviour
 
         animator.SetTrigger("attack");
         //animator.SetBool("onGround", false);
-        body.AddForce(new Vector2(0, 1f), ForceMode2D.Impulse);
+        body.AddForce(new Vector2(0, 1.2f), ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(1f);
         
@@ -50,8 +53,8 @@ public class Chocoblin : MonoBehaviour
         if (fireballBody != null) {
             fireballBody.linearVelocity = directionToPlayer * 10f;
         }
-        //yield return new WaitForSeconds(1f);
-        //animator.SetBool("onGround", true);
+
+        soundHandler.PlaySFX(5);
 
         yield return new WaitForSeconds(cooldown);
         StartCoroutine(Attack());
@@ -59,7 +62,7 @@ public class Chocoblin : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.tag == "Ground")
         {
             animator.SetBool("onGround", true);
         }
@@ -67,7 +70,7 @@ public class Chocoblin : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.tag == "Ground")
         {
             animator.SetBool("onGround", false);
         }

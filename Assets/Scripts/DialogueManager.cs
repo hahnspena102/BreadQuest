@@ -25,7 +25,12 @@ public class DialogueManager : MonoBehaviour
         new List<(int, string)>{(1, "Nice job! More Marshmoblins above. Stay vigilant.")},
 
         new List<(int, string)>{(0, "Ooh!  A gummy plant!"), (1, "Yep! These plants can heal 1 HP if you swing at them. Give it a try!")},
-        new List<(int, string)>{(0, "GRAHOBLIN! HE'S CHARGING AT US! FIGHT!")}
+        new List<(int, string)>{(1, "GRAHOBLIN! HE'S CHARGING AT US! FIGHT!")},
+        new List<(int, string)>{(0, "Hope you're not afraid of heights!"),(1, "I can fly..."),(0, "Oh yeah.")},
+        new List<(int, string)>{(1, "Woah! A Chocoblin is nearby, watch out for those fireballs!")},
+
+        new List<(int, string)>{(1, "A hoard of s'more goblins nearby!")},
+        new List<(int, string)>{(0, "Looks like we're nearing the cave!"), (1, "The big boss is near. Prepare yourself!")}
         
 
         //new List<(int, string)>{(1, "Watch out! That's a Marshmoblin! They'll throw their spears at you any chance they get.")},
