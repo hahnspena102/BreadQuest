@@ -11,7 +11,11 @@ public class GummyPlant : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        body = GetComponent<Rigidbody2D>();      
+        body = GetComponent<Rigidbody2D>();   
+
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<SirGluten>();   
+        particleHandler = FindFirstObjectByType<ParticleHandler>(); 
     }
 
     void Update(){

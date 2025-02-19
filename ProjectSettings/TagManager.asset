@@ -11,6 +11,7 @@ TagManager:
   - EnemyProj
   - GummyPlant
   - Wall
+  - Void
   layers:
   - Default
   - TransparentFX

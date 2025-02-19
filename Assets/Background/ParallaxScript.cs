@@ -20,7 +20,7 @@ public class parallax : MonoBehaviour
 
     void Update()
     {
-        speed = rb.linearVelocity.x * 0.0005f;
+        speed = rb.linearVelocity.x * 0.0001f;
         distance +=Time.deltaTime* speed;
         mat.SetTextureOffset("_MainTex", Vector2.right * distance);
 

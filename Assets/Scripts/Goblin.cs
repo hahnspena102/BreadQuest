@@ -8,10 +8,20 @@ public class Goblin : MonoBehaviour
     private Rigidbody2D body;
     [SerializeField] Rigidbody2D player;
     [SerializeField] ParticleHandler particleHandler;
+    private SoundHandler soundHandler;
+    [SerializeField]private int type = 0;
+    
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();      
+
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+
+        particleHandler = FindFirstObjectByType<ParticleHandler>(); 
+        soundHandler = FindFirstObjectByType<SoundHandler>(); 
+        
     }
 
     void Update(){
@@ -23,6 +33,13 @@ public class Goblin : MonoBehaviour
             transform.rotation = Quaternion.Euler(rotator);
         }
         if (health == 0) {
+            if (type == 1) {
+                soundHandler.PlaySFX(1);
+            } else if (type == 2) {
+                soundHandler.PlaySFX(4);
+            } else if (type == 3) {
+                soundHandler.PlaySFX(7);
+            }
             particleHandler.PlayParticle(body.position.x, body.position.y-0.5f);
             Destroy(gameObject);
         }
@@ -38,6 +55,12 @@ public class Goblin : MonoBehaviour
 
     IEnumerator Hurt() {
         health--;
+
+        if (type == 2) {
+            soundHandler.PlaySFX(3);
+        } else if (type == 3) {
+            soundHandler.PlaySFX(6);
+        }
 
         spriteRenderer.color = Color.red;
 

@@ -202,6 +202,7 @@ MonoBehaviour:
   health: 2
   player: {fileID: 0}
   particleHandler: {fileID: 0}
+  type: 3
 --- !u!114 &4344995146764807811
 MonoBehaviour:
   m_ObjectHideFlags: 0

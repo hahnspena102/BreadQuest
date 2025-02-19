@@ -9,8 +9,9 @@ public class Grahoblin : MonoBehaviour
     [SerializeField] Rigidbody2D player;
     [SerializeField] GameObject sword;
     private float speed = 3f;
-    private float stopDistance = 3.5f;
+    [SerializeField]private float stopDistance;
     [SerializeField] private float cooldown = 2f;
+    private SoundHandler soundHandler;
     
     void Start()
     {
@@ -18,11 +19,15 @@ public class Grahoblin : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+        soundHandler = FindFirstObjectByType<SoundHandler>(); 
+
         StartCoroutine(Attack());      
     }
 
     void FixedUpdate(){
-        if (Mathf.Abs(player.position.x - body.position.x) < 12f) {
+        if (Mathf.Abs(player.position.x - body.position.x) < 16f) {
             Move();
         }
     }
@@ -46,6 +51,7 @@ public class Grahoblin : MonoBehaviour
         } 
         yield return new WaitForSeconds(cooldown/2f);
         animator.SetTrigger("attack");
+        soundHandler.PlaySFX(2);
         yield return new WaitForSeconds(0.4f);
         body.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
         sword.SetActive(true);

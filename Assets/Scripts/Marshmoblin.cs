@@ -10,6 +10,7 @@ public class Marshmoblin : MonoBehaviour
     [SerializeField] Rigidbody2D player;
     [SerializeField] private float attackOffset = 0f;
     [SerializeField] private float cooldown = 2f;
+    private SoundHandler soundHandler;
     
     void Start()
     {
@@ -17,12 +18,17 @@ public class Marshmoblin : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        GameObject sirGluten = GameObject.Find("SirGluten");
+        player = sirGluten.GetComponent<Rigidbody2D>();
+
+        soundHandler = FindFirstObjectByType<SoundHandler>(); 
+
         StartCoroutine(StartAttack());
 
     }
 
     IEnumerator StartAttack(){
-        yield return new WaitForSeconds(attackOffset);
+        yield return new WaitForSeconds(attackOffset + 0.5f);
         StartCoroutine(Attack());
     }
 
@@ -42,6 +48,8 @@ public class Marshmoblin : MonoBehaviour
         GameObject newSpear = Instantiate(spear, spawnPosition, rotation);
         newSpear.transform.parent = transform;
         Rigidbody2D spearBody= newSpear.GetComponent<Rigidbody2D>();
+
+        soundHandler.PlaySFX(0);
         if (spearBody != null) {
             spearBody.linearVelocity = newSpear.transform.up * 14f; 
         }

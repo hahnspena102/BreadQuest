@@ -218,3 +218,4 @@ MonoBehaviour:
   health: 1
   player: {fileID: 0}
   particleHandler: {fileID: 0}
+  type: 1

@@ -20,7 +20,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.gameObject.tag == "Player") {
             if (!triggered) {
                 triggered = true;
-                StartCoroutine(dialogueManager.DisplayDialogue(dialogueIndex));
+                dialogueManager.StartDialogue(dialogueIndex);
             }
             
         }

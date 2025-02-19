@@ -11,7 +11,7 @@ public class SirGluten : MonoBehaviour
     private BoxCollider2D sgCollider;
     private int jumpCount;
     private bool isCrouching, isAttacking, isHurting, isSprinting, isUnder;
-    private bool sprintToggled = true;
+    private bool sprintToggled = true, startSeq;
     private float horizontalInput, verticalInput;
     private Animator animator;
     private float movementSpeed;
@@ -50,6 +50,18 @@ public class SirGluten : MonoBehaviour
         yeastMeter.value = yeast;
 
         foreach (Transform child in healthMeter.transform)hearts.Add(child.gameObject);
+
+
+        
+        StartCoroutine(StartSequence());
+
+    }
+
+    IEnumerator StartSequence() {
+        startSeq = true;
+        body.linearVelocity = new Vector2(5f,0f);
+        yield return new WaitForSeconds(2f);
+        startSeq = false;
     }
 
     void Update() {
@@ -82,7 +94,7 @@ public class SirGluten : MonoBehaviour
         }
 
         if (health == 0) {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
 
         // Movement
@@ -119,6 +131,7 @@ public class SirGluten : MonoBehaviour
             if (verticalInput < -0.1 && body.linearVelocity.y == 0) {
                 animator.SetBool("crouch",true);
                 isCrouching = true;
+                soundEffects[3].Play(0);
             } else if (!isUnder) {
                 animator.SetBool("crouch",false);
                 StartCoroutine(Uncrouch());
@@ -170,10 +183,7 @@ public class SirGluten : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        
-
-        if (!isHurting) {
+        if (!isHurting && !startSeq) {
             body.linearVelocity = new Vector2(horizontalInput * movementSpeed, body.linearVelocity.y);
 
             if (!isAttacking) {
@@ -215,6 +225,7 @@ public class SirGluten : MonoBehaviour
     IEnumerator Hurt() {
         health--;
         StopAllAudio();
+        soundEffects[2].Play(0);
         animator.SetTrigger("hurt");
         isHurting = true;
 
@@ -279,8 +290,10 @@ public class SirGluten : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
             jumpCount = 0;
-        } else if (collision.gameObject.tag == "Lava") {
-            body.position = new Vector2(1f,-1f);
+        } else if (collision.gameObject.tag == "Void") {
+            VoidTile voidTile = collision.gameObject.GetComponent<VoidTile>();
+            body.position = voidTile.spawnPoint;
+            StartCoroutine(Hurt());
         } else if (collision.gameObject.tag == "EnemyProj") {
             if (!isHurting) StartCoroutine(Hurt());
         } else if (collision.gameObject.tag == "Goblin") {
@@ -289,12 +302,12 @@ public class SirGluten : MonoBehaviour
                 Vector2 direction;
 
                 if (collisionPoint.x > transform.position.x) {
-                    direction = new Vector2(-1f, 1f); 
+                    direction = new Vector2(-1f, 2f); 
                 } else {
-                    direction = new Vector2(1f, 1f);
+                    direction = new Vector2(1f, 2f);
                 }
 
-                body.AddForce(direction * 2f, ForceMode2D.Impulse);
+                body.AddForce(direction * 4f, ForceMode2D.Impulse);
                 StartCoroutine(Hurt());
             }
             
