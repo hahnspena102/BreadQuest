@@ -20,6 +20,10 @@ public class DialogueManager : MonoBehaviour
         new List<(int, string)>{(1, "Nice job! More S'more Goblins in the horizon. Stay vigilant.")}
     };
 
+    public DialogueManager()
+    {
+    }
+
     public IEnumerator DisplayDialogue(int index) {
         if (index < 0 || index >= dialogue.Count) yield break;
 
