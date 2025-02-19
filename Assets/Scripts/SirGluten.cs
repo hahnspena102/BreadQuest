@@ -279,7 +279,6 @@ public class SirGluten : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
             jumpCount = 0;
-            Debug.Log("Grounded");
         } else if (collision.gameObject.tag == "Lava") {
             body.position = new Vector2(1f,-1f);
         } else if (collision.gameObject.tag == "EnemyProj") {

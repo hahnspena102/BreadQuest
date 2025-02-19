@@ -14,7 +14,10 @@ public class DialogueManager : MonoBehaviour
     }
     private List<List<(int, string)>> dialogue = new List<List<(int, string)>>
     {
-        new List<(int, string)>{(1, "Watch out! That's a Marshmoblin! They'll throw spears with marshmallows on them. Stay vigilant.")}
+        new List<(int, string)>{(1, "0")},
+        new List<(int, string)>{(1, "We're approaching enemies... remember how to fight?"), (0, "Ha! Of course, it's Enter/Return to Attack.")},
+        new List<(int, string)>{(1, "Watch out! That's a Marshmoblin! They'll throw their spears at you any chance they get.")},
+        new List<(int, string)>{(1, "Nice job! More S'more Goblins in the horizon. Stay vigilant.")}
     };
 
     public IEnumerator DisplayDialogue(int index) {
@@ -28,6 +31,7 @@ public class DialogueManager : MonoBehaviour
 
             for (int j = 0; j < icons.Count; j++)
             {
+                // TODO: ADD A RESET DIALOGUE
                 icons[j].gameObject.SetActive(j == dialogue[index][i].Item1);
             }
 
