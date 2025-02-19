@@ -261,14 +261,12 @@ public class SirGluten : MonoBehaviour
 
         Image heart = healthMeter.transform.GetChild(health - 1).GetComponent<Image>();
 
-        // Correct color definition (ensuring full alpha)
         Color cyan = new Color(148f / 255f, 243f / 255f, 255f / 255f, 1f);
         Color white = new Color(1f, 1f, 1f, 1f);
 
         float duration = 0.6f;
         float elapsedTime = 0f;
 
-        // Set color before lerping
         spriteRenderer.color = cyan;
         heart.color = cyan;
 
@@ -276,14 +274,12 @@ public class SirGluten : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
 
-            // Ensure smooth interpolation
             spriteRenderer.color = Color.Lerp(cyan, white, t);
             heart.color = Color.Lerp(cyan, white, t);
 
             yield return null;
         }
 
-        // Ensure final color is set to white
         spriteRenderer.color = white;
         heart.color = white;
     }
