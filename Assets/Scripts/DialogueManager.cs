@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
         new List<(int, string)>{(1, "SirGluten. This journey will be perilous, are you ready?"), (0, "Yes!")},
         new List<(int, string)>{(1, "Looks like the terrain goes uphill, press Space to jump."), (0, "HUUP!")},
         new List<(int, string)>{(1, "Looks like a far jump... Hold Shift to sprint. Be careful not to sprint too much or else you'll grow exhausted.")},
-        new List<(int, string)>{(1, "You can also double jump for more verticality! It will also use some of your Yeast meter.")},
+        new List<(int, string)>{(1, "You can also triple jump for more verticality! It will also use some of your Yeast meter.")},
 
         new List<(int, string)>{(1, "We're approaching enemies... remember how to fight?"), (0, "Ha! Of course, it's Enter/Return to Attack.")},
         new List<(int, string)>{(1, "Nice job! More Marshmoblins above. Stay vigilant.")},
@@ -56,7 +56,6 @@ public class DialogueManager : MonoBehaviour
 
             for (int j = 0; j < icons.Count; j++)
             {
-                // TODO: ADD A RESET DIALOGUE
                 if (reset) {
                     reset = false;
                     yield break;
